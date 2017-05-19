@@ -1,0 +1,27 @@
+{
+  "name": "anjularjs-barebone",
+  "version": "1.0.0",
+  "description": "AngularJS app structure template",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbnk/anjularjs-barebone.git"
+  },
+  "author": "Alex Benedek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexbnk/anjularjs-barebone/issues"
+  },
+  "homepage": "https://github.com/alexbnk/anjularjs-barebone#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.3",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.0"
+  }
+}
