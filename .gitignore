@@ -58,5 +58,5 @@ typings/
 .env
 
 # alexbnk
-
+.DS_Store
 etc/config.js
