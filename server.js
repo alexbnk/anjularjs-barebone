@@ -1,16 +1,16 @@
 var express = require('express');
-
 var bodyParser = require('body-parser');
 //var expressSession = require('express-session');
-// var config = require('./etc/config');
+var config = require('./etc/config');
 // var passport = require('passport');
 // var LocalStrategy = require('passport-local').Strategy;
 
-// var mongoose = require('mongoose');
-// //Connect to your mongo database:
-// mongoose.connect(config.db, function(err) {
-//     if (err) throw err;
-// });
+ var mongoose = require('mongoose');
+ //Connect to your mongo database:
+ console.log('db: '+config.db);
+ mongoose.connect(config.db, function(err) {
+     if (err) throw err;
+ });
 
 // var User = require('./models/userModel'); //used by passport
 
@@ -45,6 +45,7 @@ app.use(bodyParser.urlencoded({
 // var postRoutes = require('./routes/postRoutes');
 // var authRoutes = require('./routes/authRoutes');
 // var uploadRoutes = require('./routes/uploadRoutes');
+var sushiRoutes = require('./routes/sushiRoutes');
 //
 //
 //
@@ -62,6 +63,7 @@ app.use(bodyParser.urlencoded({
 // app.use('/auth', authRoutes);
 // app.use('/api/posts', postRoutes);
 // app.use('/api/uploads', uploadRoutes);
+ app.use('/api/sushi', sushiRoutes);
 
 
 
@@ -89,7 +91,7 @@ app.use(express.static('node_modules'));
 
 // Server errors handling
 app.all('[^.]+', function(req, res) {
-    res.sendFile(__dirname + "./index.html");
+    res.sendFile(__dirname + "/index.html");
 });
 
 app.use(function(err, req, res, next) {
@@ -101,7 +103,7 @@ app.use(function(err, req, res, next) {
 });
 
 // Start a server listener
-app.listen(8000, function() {
-    console.log("App: " + app.name + " is listening on 8000. ");
+app.listen(config.port, function() {
+    console.log("App: " + app.name + " is listening on port: "+config.port);
 
 });

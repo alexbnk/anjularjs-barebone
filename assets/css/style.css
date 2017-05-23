@@ -1,3 +1,40 @@
 body {
 
+  font-family: 'Ubuntu', sans-serif;
+        background: #e9ebee;
+
+
+
+}
+
+/*.active { color: red; font-weight: bolder; }*/
+.navbar  {
+    /*background-color: #003366; /* deep blue marine */
+    background-color: black; /* deep blue marine */
+    /*background-color: #001972; /* birth year color */
+    /*background-color: #005732; /* hebrew birth year color */
+    /*background-color: #3964C3;/* indigo blue */
+    /*background-color: #317546; /* Amazongrun */
+    /*background-color: rgba(0,0,0,0.03); /* black transparent */
+    /*border-color: #E7E7E7;*/
+    border: 0px;
+    margin: 0px;
+    position: relative;
+}
+.navbar-header {
+   margin: 0 auto;
+   display: table;
+margin-right: auto !important;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    /*font-size: 24px;*/
+}
+
+li:hover {
+cursor: pointer;
+
 }

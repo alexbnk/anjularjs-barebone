@@ -1,0 +1,41 @@
+<div ng-controller="itemsController" class="container">
+
+
+  <div class="panel panel-default" >
+    <div class="panel-heading">
+      <h3 class="panel-title">{{title}} component info</h3>
+    </div>
+    <div class="panel-body">
+    This 'sushi' component gets all items from rest api at /api/sushi and lists them all.
+    Each list item has ngClick to call getItem(id) and brings one item by ID and shows in the second column.
+    Notice that url is not changing when items are clicked cause there's no link to new url.
+    Sushi items are not resolved before page load but after , using promise.
+    There's no security layer, api is public.
+    </div>
+  </div>
+
+
+
+<div class="row">
+    <div class="col-md-6" >
+      <ul ng-repeat="item in items track by item._id ">
+        <li style="color: blue; text-decoration: underline"ng-click="getItem(item._id)">Name: {{item.name}},  Pieces: {{item.pcs}}, Price: {{item.price}}</li>
+      </ul>
+    </div>
+    <div ng-if="oneItem" class="col-md-6">
+      <!-- <div ui-view> -->
+      <h3>{{oneItem.name}}</h3>
+      <p>Item code: {{oneItem._id}}</p>
+      <img ng-src="/assets/img/{{oneItem.photo}}" alt="{{oneItem.name}}" style="width: 300px">
+      <p>Number of pieces: {{oneItem.pcs}} </p>
+      <p style="push-right"><strong>Price: {{oneItem.price}}</strong></p>
+      <!-- </div> -->
+    </div>
+
+</div>
+
+
+
+
+
+</div>
